@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Talabat Automation Suite">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Android Tests">
+        <classes>
+            <class name="com.example.myapplication.automation.tests.RegistrationTest"/>
+            <class name="com.example.myapplication.automation.tests.LoginTest"/>
+            <class name="com.example.myapplication.automation.tests.CartTest"/>
+            <class name="com.example.myapplication.automation.tests.LogoutTest"/>
+            <class name="com.example.myapplication.automation.tests.PermissionsTest"/>
+        </classes>
+    </test>
+
+</suite>
