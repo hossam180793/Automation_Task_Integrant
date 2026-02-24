@@ -5,17 +5,17 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class RegistrationPage extends BasePage {
 
-    // Locators
-    @AndroidFindBy(id = "com.talabat:id/name_field")
+    // Locators - Using placeholder IDs for Zara
+    @AndroidFindBy(id = "com.inditex.zara:id/registration_name_input")
     private WebElement nameField;
 
-    @AndroidFindBy(id = "com.talabat:id/email_field")
+    @AndroidFindBy(id = "com.inditex.zara:id/registration_email_input")
     private WebElement emailField;
 
-    @AndroidFindBy(id = "com.talabat:id/password_field")
+    @AndroidFindBy(id = "com.inditex.zara:id/registration_password_input")
     private WebElement passwordField;
 
-    @AndroidFindBy(id = "com.talabat:id/register_button")
+    @AndroidFindBy(id = "com.inditex.zara:id/create_account_button")
     private WebElement registerButton;
 
     // Methods

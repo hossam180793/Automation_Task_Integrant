@@ -1,29 +1,72 @@
 package com.example.myapplication.automation.pages;
 
+import static java.lang.Thread.sleep;
+
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class LoginPage extends BasePage {
 
-    // Locators
-    @AndroidFindBy(id = "com.talabat:id/email_field")
+    // Locators - Using placeholder IDs for Zara
+
+    @AndroidFindBy(id = "com.inditex.zara:id/accountTabContainer")
+    private WebElement AccountMenu;
+
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[contains(@resource-id,\"react-aria\")]")
     private WebElement emailField;
 
-    @AndroidFindBy(id = "com.talabat:id/password_field")
+    @AndroidFindBy(xpath = "//android.widget.Button[contains(@resource-id,\"react-aria\")]")
+    private WebElement ContinueButton;
+
+    @AndroidFindBy(xpath = "(//android.widget.EditText[contains(@resource-id,\"react-aria\")])[1]")
+    private WebElement Name;
+
+    @AndroidFindBy(xpath = "(//android.widget.EditText[contains(@resource-id,\"react-aria\")])[2]")
+    private WebElement LastName;
+
+    @AndroidFindBy(xpath = "//android.view.View[contains(@resource-id,\"app\")]/android.view.View/android.view.View/android.view.View[3]/android.view.View[4]")
+    private WebElement checkbox;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,\"Sign up with password\")]")
+    private WebElement signupPasswordlink;
+    @AndroidFindBy(xpath = "(//android.widget.EditText[contains(@resource-id,\"react-aria\")])[2]")
     private WebElement passwordField;
 
-    @AndroidFindBy(id = "com.talabat:id/login_button")
-    private WebElement loginButton;
+    @AndroidFindBy(xpath = "//android.view.View[contains(@resource-id,\"app\")]/android.view.View/android.view.View/android.view.View[3]/android.view.View[6]")
+    private WebElement checkbox2;
 
-    @AndroidFindBy(id = "com.talabat:id/error_message")
+    @AndroidFindBy(xpath = "(//android.widget.Button[contains(@resource-id,\"react-aria\")])[1]")
+    private WebElement loginButton;
+    @AndroidFindBy(id = "com.inditex.zara:id/login_button")
+    private WebElement CreateAccountButton;
+
+    @AndroidFindBy(id = "com.inditex.zara:id/error_message_text")
     private WebElement errorMessage;
-    
-    @AndroidFindBy(id = "com.talabat:id/register_now_button") // Placeholder ID for the registration link/button
+
+    @AndroidFindBy(id = "com.inditex.zara:id/accountTabContainer")
     private WebElement registerNowButton;
 
     // Methods
+
+    public void enterZaraAPP() {
+        AccountMenu.click();
+
+    }
+
     public void enterEmail(String email) {
+        emailField.click();
         emailField.sendKeys(email);
+        ContinueButton.click();
+    }
+
+    public void info() {
+
+        Name.sendKeys("Hossam");
+        LastName.sendKeys("Allam");
+        checkbox.click();
+        ContinueButton.click();
+        signupPasswordlink.click();
     }
 
     public void enterPassword(String password) {
@@ -31,6 +74,7 @@ public class LoginPage extends BasePage {
     }
 
     public void clickLoginButton() {
+        checkbox2.click();
         loginButton.click();
     }
 

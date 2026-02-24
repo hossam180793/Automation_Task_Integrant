@@ -1,6 +1,6 @@
-# Talabat Mobile Automation Framework
+# Zara Mobile Automation Framework
 
-This project is a mobile automation framework designed to test the Talabat mobile application on Android and iOS using Appium and TestNG.
+This project is a mobile automation framework designed to test the Zara mobile application on Android and iOS using Appium and TestNG.
 
 ## a. Prerequisites
 
@@ -62,7 +62,7 @@ To modify the test configuration, simply change the values in this file:
 *   `platformName`: Set to `Android` or `iOS` to switch the target platform.
 *   `deviceName`: The specific name of your emulator (e.g., `Pixel_4_API_30`) or a real device. Use the `adb devices` command to see the exact names of connected devices.
 *   `appiumServerUrl`: The URL of the running Appium server (e.g., `http://127.0.0.1:4723`).
-*   `appPackage`: The unique identifier of the app to be tested (e.g., `com.talabat`).
+*   `appPackage`: The unique identifier of the app to be tested (e.g., `com.inditex.zara`).
 *   `appActivity`: The main screen to launch when the app starts.
 *   `udid`: (Optional) The Unique Device ID. Leave this blank if you only have one device/emulator connected. If you have multiple devices, you must specify the UDID of the target device.
 

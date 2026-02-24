@@ -12,8 +12,8 @@ import org.testng.annotations.Test;
 
 public class PermissionsTest extends BaseTest {
 
-    // The package name for the Talabat application
-    private final String packageName = "com.talabat"; 
+    // The package name for the ZARA application
+    private final String packageName = "com.inditex.zara"; 
     private final String locationPermission = "android.permission.ACCESS_FINE_LOCATION";
 
     @BeforeMethod
@@ -37,13 +37,14 @@ public class PermissionsTest extends BaseTest {
         DriverManager.quitDriver();
         DriverManager.getDriver();
 
-        // Navigate to the part of the app that requires the permission
+        // This action should trigger the app to request location permission (e.g., finding stores nearby)
+        // You may need to update this interaction for the Zara app
         HomePage homePage = new HomePage();
-        homePage.selectDeliveryAddress();
+        homePage.selectDeliveryAddress(); // Assuming a similar function exists in Zara's home page
 
         // Verify that the app handles the missing permission gracefully
-        // This placeholder ID should be replaced with the actual ID of the error message or dialog in the app
-        WebElement permissionDeniedMessage = DriverManager.getDriver().findElement(AppiumBy.id("com.talabat:id/permission_denied_message"));
+        // This placeholder ID should be replaced with the actual ID of the error message or dialog in the Zara app
+        WebElement permissionDeniedMessage = DriverManager.getDriver().findElement(AppiumBy.id("com.inditex.zara:id/permission_denied_message"));
         Assert.assertTrue(permissionDeniedMessage.isDisplayed(), "Permission denied message not displayed.");
     }
 }

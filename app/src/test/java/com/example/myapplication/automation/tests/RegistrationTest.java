@@ -17,7 +17,7 @@ public class RegistrationTest extends BaseTest {
         RegistrationPage registrationPage = new RegistrationPage();
         registrationPage.enterName("Test User");
         registrationPage.enterEmail("test.user." + System.currentTimeMillis() + "@example.com");
-        registrationPage.enterPassword("password123");
+        registrationPage.enterPassword("Pass@123");
         registrationPage.clickRegisterButton();
 
         // Verification

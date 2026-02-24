@@ -10,11 +10,11 @@ public class CartTest extends BaseTest {
 
     @Test
     public void testAddAndRemoveFromCart() {
-        // Assuming user is logged in
         HomePage homePage = new HomePage();
-        homePage.searchForItem("Pizza");
+        homePage.searchForItem();
+        homePage.selectItem("SWEETHEART NECKLINE BANDEAU TOP");
+         // Searching for a relevant item
 
-        // Click on the first search result
         homePage.clickFirstSearchResult();
 
         ProductPage productPage = new ProductPage();
@@ -22,9 +22,9 @@ public class CartTest extends BaseTest {
         productPage.clickViewCartButton();
 
         CartPage cartPage = new CartPage();
-        Assert.assertTrue(cartPage.isItemInCart(), "Item not found in cart");
+        Assert.assertTrue(cartPage.isItemInCart(), "Item was not added to the shopping bag.");
 
         cartPage.clickRemoveItemButton();
-        Assert.assertEquals(cartPage.getEmptyCartMessage(), "Your cart is empty");
+        Assert.assertEquals(cartPage.getEmptyCartMessage(), "Your shopping bag is empty");
     }
 }

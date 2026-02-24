@@ -6,14 +6,17 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 public class HomePage extends BasePage {
 
     // Locators
-    @AndroidFindBy(id = "com.talabat:id/profile_button")
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.inditex.zara:id/searchTab\")")
+    private WebElement searchicon;
+    @AndroidFindBy(id = "com.inditex.zara:id/editTextSearchHome")
+    private WebElement searchBar;
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@resource-id,\"com.inditex.zara:id/startTextItem\")]")
     private WebElement profileButton;
 
     @AndroidFindBy(id = "com.talabat:id/logout_button")
     private WebElement logoutButton;
 
-    @AndroidFindBy(id = "com.talabat:id/search_bar")
-    private WebElement searchBar;
 
     @AndroidFindBy(id = "com.talabat:id/item_view") // Placeholder for the first search result item
     private WebElement firstSearchResult;
@@ -34,7 +37,11 @@ public class HomePage extends BasePage {
         return profileButton.isDisplayed();
     }
 
-    public void searchForItem(String item) {
+    public void searchForItem() {
+        searchicon.click();
+    }
+
+    public void selectItem(String item) {
         searchBar.sendKeys(item);
     }
 

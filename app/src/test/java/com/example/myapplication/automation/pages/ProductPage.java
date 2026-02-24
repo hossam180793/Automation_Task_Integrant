@@ -5,11 +5,11 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class ProductPage extends BasePage {
 
-    // Locators
-    @AndroidFindBy(id = "com.talabat:id/add_to_cart_button")
+    // Locators - Using placeholder IDs for Zara
+    @AndroidFindBy(id = "//android.widget.Button[@content-desc=\"Add to bag\"]")
     private WebElement addToCartButton;
 
-    @AndroidFindBy(id = "com.talabat:id/view_cart_button")
+    @AndroidFindBy(id = "com.inditex.zara:id/view_bag_button")
     private WebElement viewCartButton;
 
     // Methods
